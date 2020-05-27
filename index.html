@@ -7,7 +7,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>   
-<body>
+<body onload="slider()">
     <section id="nav-bar">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#"><img src="images/logo2.png"></a>
@@ -37,9 +37,13 @@
     </section>
     <!---------------------banner------------------------------->
     <section id="banner">
-        <div class="container">
-            <div class="row">
+        <div class="banner1">
+            <div class="slider">
+                <img src="images/img1.jpg" id="slideImg">
+            </div>
+            <div class="overlay">
                 <div class="col-md-6">
+                <div class="content">
                     <p class="promo-title">OUR DOORS ARE OPEN AGAIN</p>
                     <p class="promo">A STATEMENT FROM JAGUAR LAND ROVER</p>
                     <p>The spirit of human endurance is at the heart of our brand in communities worldwide.
@@ -48,13 +52,10 @@
                         We truly believe the road ahead leads to an exciting future for us all. </p>
                     <a href="https://www.youtube.com/watch?v=TqNsQ2XHds8"><img src="images/play-button-overlay-png-transparent.png" class="play-btn">Watch Videos</a>
                 </div>
-                <div class="col-md-6 text-center">
-                    <img src="images/cars.png" class="img-fluid">
                 </div>
             </div>
         </div>
-        <img src="images/PinClipart.com_wave-clipart-black-and_3430008.png" class="bottom-img">
-    </section>
+    </section
     <!------------------Services------------------------>
     <section id="services">
         <div class="container text-center">
@@ -120,11 +121,11 @@
         <div class="container text-center">
             <p>FIND US ON SOCIAL MEDIA</p>
             <div class="social-icons">
-                <a href="https://www.facebook.com/"><img src="images/facebook.png"></a>
-                <a href="https://www.instagram.com/"><img src="images/instagram.png"></a>
-                <a href="https://twitter.com/login"><img src="images/twitter.png"></a>
+                <a href="https://www.facebook.com/Jaguar/"><img src="images/facebook.png"></a>
+                <a href="https://www.instagram.com/jaguar/?hl=en"><img src="images/instagram.png"></a>
+                <a href="https://twitter.com/Jaguar?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><img src="images/twitter.png"></a>
                 <a href="https://www.whatsapp.com/"><img src="images/whatsapp.png"></a>
-                <a href="https://in.linkedin.com/"><img src="images/linkedin.png"></a>
+                <a href="https://www.linkedin.com/company/jaguar-land-rover_1"><img src="images/linkedin.png"></a>
                 <a href="https://www.snapchat.com/"><img src="images/snapchat.png"></a>   
             </div>
         </div>
@@ -161,6 +162,28 @@
     <script src="smooth-scroll.js"></script>
     <script>
         var scroll = new SmoothScroll('a[href*="#"]');
+    </script>
+
+    <!------------------slider-------------->
+    <script>
+        var slideImg=document.getElementById("slideImg");
+        var images = new Array(
+            "images/img1.jpg",
+            "images/img2.jpg",
+            "images/img3.jpg",
+            "images/img4.jpg",
+            "images/img5.jpg"
+        );
+        var len = images.length
+        var i = 0;
+        function slider(){
+            if(i>len-1){
+                i=0;
+            }
+            slideImg.src=images[i];
+            i++;
+            setTimeout('slider()',3000);
+        }
     </script>
 </body> 
 </html>
